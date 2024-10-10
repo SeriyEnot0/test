@@ -1,35 +1,384 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Roboto/Roboto-Light.ttf";
+  src: url();
+}
+body {
+  font-family: Arial, sans-serif;
+  color: #272626;
 }
 
-a,
-.green {
+/* Первый блок */
+.hero {
+  background-image: url("Рисунок1.png");
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.699);
+}
+
+.hero-content {
+  text-align: left;
+  width: 92%;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  width: 38%;
+  padding-top: 15px;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.hero-content h3{
+  width: 38%;
+}
+
+.hero-content p {
+  width: 38%;
+  font-size: 24px;
+}
+
+/* Второй блок */
+.features {
+  background: #272626;
+  padding: 3% 5%;
+  text-align: center;
+  color: #fff;
+}
+
+.features h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.feature-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10%;
+}
+
+.feature-item {
+  flex: 1 1 200px;
+  max-width: 450px;
+  text-align: center;
+}
+
+.feature-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.feature-item h3{
+  padding-top: 10px;
+  text-align: center;
+}
+.feature-item p {
+  padding-top: 10px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Третий блок */
+.grid-section {
+	background: url("/img/phone1.png") 0px 0px no-repeat;
+	background-size: cover;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.grid-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.grid-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  text-align: center;
+}
+
+.grid-item img {
+  width: 12%;
+  height: auto;
+  border-radius: 10px;
+  padding-top: 15% ;
+}
+
+.grid-item h3 {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.grid-item p {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+/* Четвертый блок */
+.about-section {
+  color: #fff;
+  background: #272626;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 50px 0px;
+  gap: 40px;
+}
+
+.about-image {
+  flex: 1.5;
+}
+
+.about-image img {
+  width: 140%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-content {
+  flex: 1.5;
+  text-align: center;
+  padding-left: 10% ;
+}
+
+.about-content h2 {
+  width: 70%;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  width: 70%;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Пятый блок */
+.cta-section {
+  color: #fff;
+  background: #f8b60e;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.cta-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.cta-section a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  padding: 10px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  background-color: #272626;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.cta-section a:hover {
+  background-color: #3f3e3e;
+}
+/* -------------------------------  */
+.feedback-container {
+  background-color: #272626;
+  display: flex;
+  height: 80vh;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+/* Стили для левой части: Форма обратной связи */
+.feedback-form-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feedback-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Стили для правой части: Информация */
+.contact-info-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #272626;
+  color: #fff;
+}
+
+.contact-info-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-info-container p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.contact-icons div {
+  text-align: center;
+}
+
+.contact-icons img {
+  padding-top: 5%;
+  padding-bottom: 7%;
+  width: 45%;
+  height: 60%;
+}
+
+/* Медиа-запросы для адаптации под мобильные устройства */
+@media (max-width: 768px) {
+  .feedback-container {
+      flex-direction: column;
+      height: auto;
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  .feedback-form-container,
+  .contact-info-container {
+      flex: none;
+      width: 100%;
+      padding: 20px;
+  }
+
+  .contact-icons {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .contact-icons div {
+      margin-bottom: 15px;
+  }
+}
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+  .hero {
+      height: 300px;
+  }
+
+  .hero-content h1 {
+      font-size: 36px;
+  }
+
+  .hero-content p {
+      font-size: 18px;
+  }
+
+  .features h2,
+  .grid-title,
+  .about-content h2,
+  .cta-section h2,
+  .contact-form h2 {
+      font-size: 28px;
+  }
+
+  .feature-item {
+      flex: 1 1 150px;
+      max-width: 150px;
+  }
+
+  .feature-item p {
+      font-size: 16px;
+  }
+
+  .grid-items {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-item h3 {
+      font-size: 20px;
+  }
+
+  .grid-item p {
+      font-size: 14px;
+  }
+
+  .about-section {
+      flex-direction: column;
+  }
+
+  .about-content p {
+      font-size: 16px;
+  }
+
+  .cta-section button {
+      font-size: 16px;
+  }
+
+  .info-section {
+      flex-direction: column;
+  }
+
+  .contact-section {
+      flex-direction: column;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+      font-size: 14px;
+  }
+
+  .contact-form button {
+      font-size: 16px;
+  }
+
+  .contact-image p {
+      font-size: 14px;
+  }
+
+  .partners-section {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
   }
 }
